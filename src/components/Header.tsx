@@ -25,7 +25,7 @@ export default function Header() {
         <ul className="flex gap-4 items-center mr-5">
           {itens.map((item) =>
             pathname !== item.url ? (
-              <li>
+              <li key={item.name}>
                 <Link href={item.url} style={{ display: "contents" }}>
                   <button
                     key={item.name}
@@ -36,7 +36,7 @@ export default function Header() {
                 </Link>
               </li>
             ) : (
-              <li>
+              <li key={item.name}>
                 <Link href={item.url}>
                   <button
                     key={item.name}
