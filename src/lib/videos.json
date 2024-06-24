@@ -1,0 +1,46 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "titulo": "Desmistificando mobile - Linguagens e Frameworks",
+      "descricao": "1,5 mil visualizações",
+      "url": "https://www.youtube.com/embed/fmu1LQvZhms",
+      "categoria": "Mobile"
+    },
+    {
+      "id": 2,
+      "titulo": "Desmistificando mobile - Linguagens e Frameworks",
+      "descricao": "1,5 mil visualizações",
+      "url": "https://www.youtube.com/embed/fmu1LQvZhms",
+      "categoria": "Mobile"
+    },
+    {
+      "id": 3,
+      "titulo": "O que faz uma desenvolvedora front-end?",
+      "descricao": "31 mil visualizações",
+      "url": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=WEGx28BgFxo5xgNP",
+      "categoria": "Front End"
+    },
+    {
+      "id": 4,
+      "titulo": "O que faz uma desenvolvedora front-end?",
+      "descricao": "31 mil visualizações",
+      "url": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=WEGx28BgFxo5xgNP",
+      "categoria": "Front End"
+    },
+    {
+      "id": 5,
+      "titulo": "O que faz uma desenvolvedora front-end?",
+      "descricao": "31 mil visualizações",
+      "url": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=WEGx28BgFxo5xgNP",
+      "categoria": "Front End"
+    },
+    {
+      "id": 6,
+      "titulo": "O que faz uma desenvolvedora Back-end? com Juliana Amoasei",
+      "descricao": "23 mil visualizações",
+      "url": "https://www.youtube.com/embed/fiPfvylj6rk?si=_j-dK5chULH_iGz1",
+      "categoria": "Back End"
+    }
+  ]
+}

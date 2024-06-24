@@ -1,0 +1,51 @@
+        <BotaoTag nome="Front End" cor="#86d0fe" />
+        <BotaoTag nome="Back End" cor="#5ec376" />
+        <BotaoTag nome="Mobile" cor="#f4bb26" /> *
+
+
+import { useState, useEffect } from "react";
+
+const URL_API = "http://localhost:4000/videos";
+
+
+          const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<any[]>([]);
+  const fetchAllData = async () => {
+    try {
+      setLoading(true);
+
+      const response = await fetch(URL_API);
+      const data = await response.json();
+
+      if (!data) throw "Problema na requisição";
+      setData(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchAllData();
+  }, []);
+
+  const filterDataByCategory = (categoria: string) => {
+    return data.filter(item => item.categoria === categoria);
+  };
+
+
+
+
+// {loading? (
+//   <p>Carregando...</p>
+// ) : (
+//   data &&
+//   data.map((video) => (
+//     <BotaoTag
+//       key={video.id}
+//       nome={video.categoria}
+//       cor={video.cor}
+//     />
+//   ))
+// )}
