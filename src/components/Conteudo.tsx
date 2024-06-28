@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
+import Modal from "./Modal";
 
 const URL_API = "http://localhost:4000/videos";
 
 export default function Conteudo() {
   const [data, setData] = useState<any[]>([]);
+  const [open, setOpen] = useState<boolean>(true);
 
   const fetchAllData = async () => {
     try {
@@ -37,7 +39,7 @@ export default function Conteudo() {
     }
   };
 
-  const editData = async (id: number, novoTitulo: string) => { 
+  const editData = async (id: number, novoTitulo: string) => {
     try {
       const response = await fetch(`${URL_API}/${id}`, {
         method: "PUT",
@@ -63,17 +65,17 @@ export default function Conteudo() {
 
   return (
     <section className="overflow-hidden">
-      <section className="flex flex-col justify-evenly h-screen p-3 bg-zinc-900 items-center">
+      <section className="flex flex-col h-fit gap-4 p-3 bg-zinc-900 items-center">
         <BotaoTag nome="Front End" cor="#86d0fe" />
         <div
-          className="flex overflow-x-scroll lg:overflow-hidden p-3 gap-5 w-full justify-left lg:justify-center "
+          className="flex overflow-x-scroll lg:overflow-hidden overflow-y-hidden p-3 gap-5 w-full justify-left lg:justify-center"
           id="scrollbar1"
         >
           {data.map((video) =>
             video.categoria === "Front End" ? (
               <li
                 key={video.id}
-                className="flex flex-col flex-shrink-0 border-2 rounded-md min-w-fit border-sky-400"
+                className="flex flex-col flex-shrink-0 border-2 rounded-md min-w-fit border-sky-400 "
               >
                 <iframe
                   width="100%"
@@ -83,7 +85,7 @@ export default function Conteudo() {
                   allowFullScreen
                   className="border-2 rounded-t-md border-sky-400 w-72 h-auto"
                 />
-                <div className="flex justify-center gap-5 p-2">
+                <div className="flex justify-center gap-5 p-2 h-fit">
                   <button
                     className="flex gap-3 items-center"
                     onClick={() => deleteData(video.id)}
@@ -93,11 +95,12 @@ export default function Conteudo() {
                   </button>
                   <button
                     className="flex gap-3 items-center"
-                    onClick={() => ""}
+                    onClick={() => setOpen(!open)}
                   >
                     <CiEdit />
                     Editar
                   </button>
+                  <Modal isOpen={open} setOpen={setOpen} />
                 </div>
               </li>
             ) : null
@@ -105,7 +108,87 @@ export default function Conteudo() {
         </div>
 
         <BotaoTag nome="Back End" cor="#5ec376" />
+
+        <div
+          className="flex overflow-x-scroll lg:overflow-hidden overflow-y-hidden p-3 gap-5 w-full justify-left lg:justify-center"
+          id="scrollbar1"
+        >
+          {data.map((video) =>
+            video.categoria === "Back End" ? (
+              <li
+                key={video.id}
+                className="flex flex-col flex-shrink-0 border-2 rounded-md min-w-fit border-green-300"
+              >
+                <iframe
+                  width="100%"
+                  height="315"
+                  src={video.url}
+                  title="Video do YouTube"
+                  allowFullScreen
+                  className="border-2 rounded-t-md border-green-400 w-72 h-auto"
+                />
+                <div className="flex justify-center gap-5 p-2 h-fit">
+                  <button
+                    className="flex gap-3 items-center"
+                    onClick={() => deleteData(video.id)}
+                  >
+                    <CiTrash />
+                    Deletar
+                  </button>
+                  <button
+                    className="flex gap-3 items-center"
+                    onClick={() => setOpen(!open)}
+                  >
+                    <CiEdit />
+                    Editar
+                  </button>
+                  <Modal isOpen={open} setOpen={setOpen} />
+                </div>
+              </li>
+            ) : null
+          )}
+        </div>
+
         <BotaoTag nome="Mobile" cor="#f4bb26" />
+        <div
+          className="flex overflow-x-scroll lg:overflow-hidden overflow-y-hidden p-3 gap-5 w-full justify-left lg:justify-center"
+          id="scrollbar1"
+        >
+          {data.map((video) =>
+            video.categoria === "Mobile" ? (
+              <li
+                key={video.id}
+                className="flex flex-col flex-shrink-0 border-2 rounded-md min-w-fit border-yellow-400 "
+              >
+                <iframe
+                  width="100%"
+                  height="315"
+                  src={video.url}
+                  title="Video do YouTube"
+                  allowFullScreen
+                  className="border-2 rounded-t-md border-yellow-400 w-72 h-auto"
+                />
+                <div className="flex justify-center gap-5 p-2 h-fit">
+                  <button
+                    className="flex gap-3 items-center"
+                    onClick={() => deleteData(video.id)}
+                  >
+                    <CiTrash />
+                    Deletar
+                  </button>
+                  <button
+                    className="flex gap-3 items-center"
+                    onClick={() => setOpen(!open)}
+                  >
+                    <CiEdit />
+                    Editar
+                  </button>
+                  <Modal isOpen={open} setOpen={setOpen} />
+                </div>
+              </li>
+            ) : null
+          )}
+        </div>
       </section>
     </section>
   );

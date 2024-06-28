@@ -5,6 +5,6 @@ interface BotaoNome {
 
 export default function BotaoTag({ nome, cor }:BotaoNome) {
   return(
-    <h1 className=" text-center rounded-lg p-2 font-bold w-48" style={{backgroundColor: cor}}>{nome.toUpperCase()}</h1>
+    <h1 className=" text-center rounded-lg p-2 font-bold mt-3 w-48" style={{backgroundColor: cor}}>{nome.toUpperCase()}</h1>
   )
 }
