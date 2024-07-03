@@ -5,6 +5,8 @@ interface IModal {
   setOpen: (isOpen: boolean) => void;
 }
 
+// fazer o put do modal 
+
 export default function Modal({ isOpen, setOpen }: IModal) {
   if (!isOpen) {
     return (
@@ -18,7 +20,6 @@ export default function Modal({ isOpen, setOpen }: IModal) {
           <h1 className="uppercase text-center mb-5">Editar Card:</h1>
           <form className="flex flex-col gap-3">
             <div className="flex flex-col ">
-              {/* titulo */}
               <label>Título</label>
               <input
                 type="text"
@@ -26,15 +27,14 @@ export default function Modal({ isOpen, setOpen }: IModal) {
                 placeholder="Novo título"
               />
             </div>
-            {/* categorias */}
             <div className="flex flex-col ">
               <label>Categorias</label>
               <select className="border-2 p-2 rounded-md bg-transparent border-blue-400">
                 <option value="frontend" className="bg-blue-950">
-                  Front-end
+                  Front-End
                 </option>
                 <option value="backend" className="bg-blue-950">
-                  Back-end
+                  Back-End
                 </option>
                 <option value="mobile" className="bg-blue-950">
                   Mobile
@@ -50,7 +50,6 @@ export default function Modal({ isOpen, setOpen }: IModal) {
                 placeholder="url da imagem"
               />
             </div>
-            {/* video */}
             <div className="flex flex-col ">
               <label>Video</label>
               <input
@@ -59,7 +58,6 @@ export default function Modal({ isOpen, setOpen }: IModal) {
                 placeholder="url do vídeo"
               />
             </div>
-            {/* descricao */}
             <div className="flex flex-col ">
               <label>Descrição</label>
               <textarea
@@ -87,6 +85,6 @@ export default function Modal({ isOpen, setOpen }: IModal) {
       </div>
     );
   } else {
-    return <></>;
+    return null;
   }
 }

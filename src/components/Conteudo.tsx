@@ -23,6 +23,13 @@ export default function Conteudo() {
     }
   };
 
+  const handleEdit = () => { 
+   
+    setOpen(!open);
+    
+  }
+
+
   const deleteData = async (id: number) => {
     try {
       const response = await fetch(`${URL_API}/${id}`, {
@@ -39,40 +46,20 @@ export default function Conteudo() {
     }
   };
 
-  const editData = async (id: number, novoTitulo: string) => {
-    try {
-      const response = await fetch(`${URL_API}/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ titulo: novoTitulo }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Não foi possível editar o vídeo.");
-      }
-
-      fetchAllData();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     fetchAllData();
   }, []);
 
   return (
-    <section className="overflow-hidden">
-      <section className="flex flex-col h-fit gap-4 p-3 bg-zinc-900 items-center">
+    <section className="overflow-hidden min-h-screen">
+      <section className="flex flex-col h-fit gap-4 p-3 bg-zinc-900 items-center min-h-screen">
         <BotaoTag nome="Front End" cor="#86d0fe" />
         <div
           className="flex overflow-x-scroll lg:overflow-hidden overflow-y-hidden p-3 gap-5 w-full justify-left lg:justify-center"
           id="scrollbar1"
         >
           {data.map((video) =>
-            video.categoria === "Front End" ? (
+            video.categoria === "frontend" ? (
               <li
                 key={video.id}
                 className="flex flex-col flex-shrink-0 border-2 rounded-md min-w-fit border-sky-400 "
@@ -95,9 +82,9 @@ export default function Conteudo() {
                   </button>
                   <button
                     className="flex gap-3 items-center"
-                    onClick={() => setOpen(!open)}
+                    onClick={handleEdit}
                   >
-                    <CiEdit />
+                    <CiEdit/>
                     Editar
                   </button>
                   <Modal isOpen={open} setOpen={setOpen} />
@@ -114,7 +101,7 @@ export default function Conteudo() {
           id="scrollbar1"
         >
           {data.map((video) =>
-            video.categoria === "Back End" ? (
+            video.categoria === "backend" ? (
               <li
                 key={video.id}
                 className="flex flex-col flex-shrink-0 border-2 rounded-md min-w-fit border-green-300"
@@ -137,7 +124,7 @@ export default function Conteudo() {
                   </button>
                   <button
                     className="flex gap-3 items-center"
-                    onClick={() => setOpen(!open)}
+                    onClick={handleEdit}
                   >
                     <CiEdit />
                     Editar
@@ -149,13 +136,13 @@ export default function Conteudo() {
           )}
         </div>
 
-        <BotaoTag nome="Mobile" cor="#f4bb26" />
+        <BotaoTag nome="mobile" cor="#f4bb26" />
         <div
           className="flex overflow-x-scroll lg:overflow-hidden overflow-y-hidden p-3 gap-5 w-full justify-left lg:justify-center"
           id="scrollbar1"
         >
           {data.map((video) =>
-            video.categoria === "Mobile" ? (
+            video.categoria === "mobile" ? (
               <li
                 key={video.id}
                 className="flex flex-col flex-shrink-0 border-2 rounded-md min-w-fit border-yellow-400 "
@@ -178,7 +165,7 @@ export default function Conteudo() {
                   </button>
                   <button
                     className="flex gap-3 items-center"
-                    onClick={() => setOpen(!open)}
+                    onClick={handleEdit}
                   >
                     <CiEdit />
                     Editar

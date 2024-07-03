@@ -26,42 +26,42 @@
       "titulo": "O que faz uma desenvolvedora front-end?",
       "descricao": "31 mil visualizações",
       "url": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=WEGx28BgFxo5xgNP",
-      "categoria": "Front End"
+      "categoria": "Front-End"
     },
     {
       "id": "5",
       "titulo": "O que faz uma desenvolvedora front-end?",
       "descricao": "31 mil visualizações",
       "url": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=WEGx28BgFxo5xgNP",
-      "categoria": "Front End"
+      "categoria": "Front-End"
     },
     {
       "id": "6",
       "titulo": "O que faz uma desenvolvedora front-end?",
       "descricao": "31 mil visualizações",
       "url": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=WEGx28BgFxo5xgNP",
-      "categoria": "Front End"
+      "categoria": "Front-End"
     },
     {
       "id": "7",
       "titulo": "O que faz uma desenvolvedora Back-end? com Juliana Amoasei",
       "descricao": "23 mil visualizações",
       "url": "https://www.youtube.com/embed/fiPfvylj6rk?si=_j-dK5chULH_iGz1",
-      "categoria": "Back End"
+      "categoria": "Back-End"
     },
     {
       "id": "8",
       "titulo": "O que faz uma desenvolvedora Back-end? com Juliana Amoasei",
       "descricao": "23 mil visualizações",
       "url": "https://www.youtube.com/embed/fiPfvylj6rk?si=_j-dK5chULH_iGz1",
-      "categoria": "Back End"
+      "categoria": "Back-End"
     },
     {
       "id": "9",
       "titulo": "O que faz uma desenvolvedora Back-end? com Juliana Amoasei",
       "descricao": "23 mil visualizações",
       "url": "https://www.youtube.com/embed/fiPfvylj6rk?si=_j-dK5chULH_iGz1",
-      "categoria": "Back End"
+      "categoria": "Back-End"
     }
   ]
 }
