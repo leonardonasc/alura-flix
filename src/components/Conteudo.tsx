@@ -1,7 +1,6 @@
 "use client";
 import BotaoTag from "./BotaoTag";
 import { useState, useEffect } from "react";
-
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
 import Modal from "./Modal";
@@ -10,7 +9,8 @@ const URL_API = "http://localhost:4000/videos";
 
 export default function Conteudo() {
   const [data, setData] = useState<any[]>([]);
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
+  const [selectedVideo, setSelectedVideo] = useState<any | null>(null);
 
   const fetchAllData = async () => {
     try {
@@ -19,18 +19,15 @@ export default function Conteudo() {
       setData(data);
     } catch (error) {
       console.log(error);
-    } finally {
     }
   };
 
-  const handleEdit = () => { 
-   
-    setOpen(!open);
-    
-  }
+  const handleEdit = (video: any) => {
+    setSelectedVideo(video);
+    setOpen(true);
+  };
 
-
-  const deleteData = async (id: number) => {
+  const deleteData = async (id: any) => {
     try {
       const response = await fetch(`${URL_API}/${id}`, {
         method: "DELETE",
@@ -44,6 +41,12 @@ export default function Conteudo() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const updateVideo = (updatedVideo: any) => {
+    setData((prevData) =>
+      prevData.map((video) => (video.id === updatedVideo.id ? updatedVideo : video))
+    );
   };
 
   useEffect(() => {
@@ -82,12 +85,11 @@ export default function Conteudo() {
                   </button>
                   <button
                     className="flex gap-3 items-center"
-                    onClick={handleEdit}
+                    onClick={() => handleEdit(video)}
                   >
-                    <CiEdit/>
+                    <CiEdit />
                     Editar
                   </button>
-                  <Modal isOpen={open} setOpen={setOpen} />
                 </div>
               </li>
             ) : null
@@ -124,12 +126,11 @@ export default function Conteudo() {
                   </button>
                   <button
                     className="flex gap-3 items-center"
-                    onClick={handleEdit}
+                    onClick={() => handleEdit(video)}
                   >
                     <CiEdit />
                     Editar
                   </button>
-                  <Modal isOpen={open} setOpen={setOpen} />
                 </div>
               </li>
             ) : null
@@ -165,18 +166,25 @@ export default function Conteudo() {
                   </button>
                   <button
                     className="flex gap-3 items-center"
-                    onClick={handleEdit}
+                    onClick={() => handleEdit(video)}
                   >
                     <CiEdit />
                     Editar
                   </button>
-                  <Modal isOpen={open} setOpen={setOpen} />
                 </div>
               </li>
             ) : null
           )}
         </div>
       </section>
+      {selectedVideo && (
+        <Modal
+          isOpen={open}
+          setOpen={setOpen}
+          video={selectedVideo}
+          updateVideo={updateVideo}
+        />
+      )}
     </section>
   );
 }
