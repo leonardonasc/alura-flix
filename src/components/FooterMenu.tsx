@@ -42,24 +42,3 @@ export default function FooterMenu() {
   );
 }
 
-// //       {pathname === "/" ? (
-//   <div className="bg-gray-950 flex justify-evenly items-center gap-3 h-20 border-t-2 border-blue-600 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] ">
-//   <button className="uppercase bg-blue-950 px-3 py-1 border-blue-600 border rounded-3xl text-sm text-blue-600 font-bold flex items-center gap-2">
-//     <img src="/home-azul.png" className="w-8 h-8" alt="home" /> {nome}
-//   </button>
-
-//   <Link href="/criarvideo">
-//     <img src="/criar-video.png" className="w-9 h-9" alt="criar video" />
-//   </Link>
-// </div>
-// ) : (
-// <div className="bg-gray-950 flex justify-evenly flex-row-reverse items-center gap-3 h-20 border-t-2 border-blue-600 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] ">
-//   <button className="uppercase bg-blue-950 px-3 py-1 border-blue-600 border rounded-3xl text-sm text-blue-600 font-bold flex items-center gap-2">
-//     <img src="/criar-video-azul.png" className="w-5 h-5" alt="criar video" /> {nome}
-//   </button>
-
-//   <Link href="/">
-//     <img src="/home.png" className="w-9 h-9" alt="home" />
-//   </Link>
-// </div>
-// )}

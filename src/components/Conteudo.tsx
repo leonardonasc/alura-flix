@@ -5,7 +5,8 @@ import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
 import Modal from "./Modal";
 
-const URL_API = "http://localhost:4000/videos";
+const URL_API =
+  "https://my-json-server.typicode.com/leonardonasc/alura-flix-api/videos";
 
 export default function Conteudo() {
   const [data, setData] = useState<any[]>([]);
@@ -45,7 +46,9 @@ export default function Conteudo() {
 
   const updateVideo = (updatedVideo: any) => {
     setData((prevData) =>
-      prevData.map((video) => (video.id === updatedVideo.id ? updatedVideo : video))
+      prevData.map((video) =>
+        video.id === updatedVideo.id ? updatedVideo : video
+      )
     );
   };
 
@@ -56,7 +59,7 @@ export default function Conteudo() {
   return (
     <section className="overflow-hidden min-h-screen">
       <section className="flex flex-col h-fit gap-4 p-3 bg-zinc-900 items-center min-h-screen">
-        <BotaoTag nome="Front End" cor="#86d0fe" />
+          <BotaoTag nome="Front End" cor="#86d0fe" />
         <div
           className="flex overflow-x-scroll lg:overflow-hidden overflow-y-hidden p-3 gap-5 w-full justify-left lg:justify-center"
           id="scrollbar1"

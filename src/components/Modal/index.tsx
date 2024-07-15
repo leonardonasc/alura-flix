@@ -19,7 +19,7 @@ export default function Modal({ isOpen, setOpen, video, updateVideo }: IModal) {
     event.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:4000/videos/${video.id}`, {
+      const response = await fetch(`https://my-json-server.typicode.com/leonardonasc/alura-flix-api/videos/${video.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const URL_API = "http://localhost:4000/videos";
+const URL_API = "https://my-json-server.typicode.com/leonardonasc/alura-flix-api/videos";
 
 export default function FormVideo() {
   const [formData, setFormData] = useState({
