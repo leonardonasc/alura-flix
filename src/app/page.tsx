@@ -16,7 +16,9 @@ export default function Home() {
     <>
       <div className="sm:block hidden">
         <Header />
+        <div className="sm:hidden md:hidden lg:hidden xl:block">
         <FeaturedVideo />
+        </div>
       </div>
       <Conteudo />
       <div className="sm:hidden block">

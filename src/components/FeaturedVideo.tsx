@@ -15,7 +15,7 @@ export default function FeaturedVideo() {
       <div className="flex m-4 relative z-10 h-[50vh]">
         <div className="flex flex-col justify-center gap-4">
           <BotaoTag nome="mobile" cor="#f4bb26" />
-          <div className="flex flex-col ga  p-4">
+          <div className="flex flex-col gap-4 md:">
             <h1 className="text-3xl font-bold ">Featured Video</h1>
             <p className="text-sm w-2/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -28,7 +28,7 @@ export default function FeaturedVideo() {
         </div>
         <div className="flex-col flex-shrink-0 border-2 rounded-md  border-yellow-400">
           <iframe
-            width="800px"
+            width="700px"
             height="100%"
             src="https://www.youtube.com/embed/2z6f8VN_Pro?si=8PmlmBtcZX8hV9XK"
             title="YouTube video player"
