@@ -25,6 +25,7 @@ export default function Modal({ isOpen, setOpen, video, updateVideo }: IModal) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          id: video.id, 
           titulo,
           categoria,
           imagem,
